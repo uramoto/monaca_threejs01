@@ -26,13 +26,13 @@ function init() {
     
     // レフ板として点ライトを追加
     var pointLight = new THREE.PointLight(0xFFFFFF, 0.9, 1000);
-	pointLight.position.set(100, 0, 200);
-	scene.add(pointLight);
+    pointLight.position.set(100, 0, 200);
+    scene.add(pointLight);
 
     // レンダラーを作り、描画先のDOMエレメントをbody直下に置く
     renderer = new THREE.WebGLRenderer();
-	renderer.setSize(viewWidth, viewHeight);
-	document.body.appendChild( renderer.domElement );
+    renderer.setSize(viewWidth, viewHeight);
+    document.body.appendChild( renderer.domElement );
     
     // OBJ・MTLファイルを読み込み開始
     var objLoader = new THREE.OBJMTLLoader();
@@ -70,13 +70,13 @@ function doRender() {
     mouse.y += (0.5 - mouse.y) * 0.05;
 
     // シーンを描画
-	renderer.render(scene, camera);
+    renderer.render(scene, camera);
 }
 
 // タッチイベントを拾う
 function onTouchMove(ev) {
-	mouse.x = event.changedTouches[0].pageX / screen.width;
-	mouse.y = event.changedTouches[0].pageY / screen.height;
+    mouse.x = event.changedTouches[0].pageX / screen.width;
+    mouse.y = event.changedTouches[0].pageY / screen.height;
     ev.preventDefault();  // スクロール防止
 }
 
